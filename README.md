@@ -16,3 +16,4 @@ Isomorphic application that benefit of SSR (server side rendering), already set 
 - flow (static type checking at compile time)
 - React Router 4
 - webpack
+- unit testing with Jest

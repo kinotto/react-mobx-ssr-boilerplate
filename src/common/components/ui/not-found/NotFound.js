@@ -1,4 +1,7 @@
+/* @flow */
 import React from 'react';
+
+type Props = {};
 
 const NotFound = (props: Props) => (
   <div>

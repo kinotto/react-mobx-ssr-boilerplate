@@ -22,14 +22,13 @@ class Button extends React.Component<Props> {
 
   addItem = () => this.props.appstate.addItem('foobar');
 
-  
   render() {
 
     const { appstate } = this.props;
 
     return (
       <div>
-        <button onClick={this.addItem} className="pluto">foobars</button>
+        <button onClick={this.addItem} className="pluto">foob</button>
         <ul>
           {appstate.items.map((item, key) => <li key={key}>{item}</li>)}
         </ul>
