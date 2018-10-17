@@ -1,0 +1,40 @@
+{
+  "name": "recruitment-app",
+  "version": "2.0.0",
+  "description": "Recruitment app",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --inline --open --port 3010",
+    "start-prod": "node src/index.js",
+    "flow": "flow check",
+    "watch": "nodemon src/index.js",
+    "build": "webpack -p"
+  },
+  "author": "Karim Abdelcadir",
+  "license": "MIT",
+  "dependencies": {
+    "mobx": "^3.3.1",
+    "mobx-react": "^4.3.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-hot-loader": "1.3.2",
+    "css-loader": "0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.9.3",
+    "react-hot-loader": "^4.3.7",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "2.7.1"
+  }
+}
