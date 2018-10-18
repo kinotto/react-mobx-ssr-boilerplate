@@ -2,7 +2,6 @@
 import { createServer } from 'http';
 import fs from 'fs';
 import path from 'path';
-
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'mobx-react';
@@ -54,9 +53,9 @@ const renderView = (req, appstate) => {
 
 createServer((req, res) => {
 
-  if (req.url === '/bundle.js') {
+  if (req.url === '/bundle.js' || req.url === '/bundle.js.map') {
     res.writeHead(200, { 'Content-Type': 'text/javascript' });
-    fs.createReadStream(path.resolve(__dirname, '../../dist/bundle.js')).pipe(res);
+    fs.createReadStream(path.resolve(__dirname, `../../dist${req.url}`)).pipe(res);
   }
   else if (req.url === '/index.css') {
     res.writeHead(200, { 'Content-Type': 'text/css' });
@@ -71,4 +70,4 @@ createServer((req, res) => {
     res.end();
   }
 
-}).listen(PORT)
+}).listen(PORT);

@@ -5,10 +5,11 @@
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --open --port 3010",
-    "start-prod": "node src/index.js",
+    "start-prod": "npm run build-prod && node src/index.js",
     "flow": "flow check",
     "watch": "nodemon src/index.js",
-    "build": "webpack -p",
+    "build-dev": "cross-env NODE_ENV=development webpack -p",
+    "build-prod": "cross-env NODE_ENV=production webpack -p",
     "test": "jest --watch"
   },
   "author": "Karim Abdelcadir",
@@ -30,6 +31,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.2.0",
     "css-hot-loader": "1.3.2",
     "css-loader": "0.28.7",
     "extract-text-webpack-plugin": "^3.0.2",
