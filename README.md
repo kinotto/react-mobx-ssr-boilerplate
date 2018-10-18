@@ -22,4 +22,19 @@ Isomorphic application that benefit of SSR (server side rendering), already set 
 # Coding convention
 - every component must start with a capital letter.
 - unit tests should be placed in the same folder of the component and should following this naming "componentName.test.js"
-- any scss must be placed in the style folder and must have the prefix _ if is a partial file
+
+# Basic folder structure:
+- Stores
+   * Domain stores:
+       stores the data which'll be needed in your app. (user data)
+   * View: stores:
+       stores the data which'll be needed to present your app (loading, error variables..)
+       if the state of the store is too simple there's no need of a specific component ui-store.
+
+- Models: Here you can define the data models
+
+- Services: Here you can make services like api calls, inside singleton with static methods that will be used directly by the stores
+
+- Components: Container or Smart Component, Dumb or presentational component
+
+- Style: any scss must be placed in the style folder and must have the prefix _ if is a partial file
