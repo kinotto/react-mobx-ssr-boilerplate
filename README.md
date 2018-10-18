@@ -17,3 +17,9 @@ Isomorphic application that benefit of SSR (server side rendering), already set 
 - React Router 4
 - webpack
 - unit testing with Jest
+
+
+# Coding convention
+- every component must start with a capital letter.
+- unit tests should be placed in the same folder of the component and should following this naming "componentName.test.js"
+- any scss must be placed in the style folder and must have the prefix _ if is a partial file

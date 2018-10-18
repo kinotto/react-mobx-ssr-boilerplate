@@ -28,7 +28,7 @@ class Button extends React.Component<Props> {
 
     return (
       <div>
-        <button onClick={this.addItem} className="pluto__test">foob</button>
+        <button onClick={this.addItem} className="button__test">foob</button>
         <ul>
           {appstate.items.map((item, key) => <li key={key}>{item}</li>)}
         </ul>
