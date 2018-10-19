@@ -20,14 +20,14 @@ Isomorphic application that benefit of SSR (server side rendering), already set 
 
 
 # Coding convention
-- every component must start with a capital letter.
-- unit tests should be placed in the same folder of the component and should following this naming "componentName.test.js"
+- every Class must start with a capital letter.
+- unit tests should be placed in the same folder of the component and should following this naming "componentName.test.js" in order to be run automatically by Jest
 
 # Basic folder structure:
 - Stores
    * Domain stores:
-       stores the data which'll be needed in your app. (user data)
-   * View: stores:
+       stores the data which'll be needed in your app. (user data, for example todos array)
+   * View/UI: stores:
        stores the data which'll be needed to present your app (loading, error variables..)
        if the state of the store is too simple there's no need of a specific component ui-store.
 

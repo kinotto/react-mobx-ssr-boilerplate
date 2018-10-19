@@ -1,7 +1,7 @@
 /* @flow */
 import * as React from 'react';
 import { observer, inject } from "mobx-react";
-import AppState from '../../../stores/appstate';
+import AppState from '../../../stores/Appstate';
 declare var window: ?Object;
 
 type Props = {

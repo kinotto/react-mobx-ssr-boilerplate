@@ -1,7 +1,7 @@
 {
-  "name": "recruitment-app",
-  "version": "2.0.0",
-  "description": "Recruitment app",
+  "name": "Airfi Home",
+  "version": "1.0.0",
+  "description": "Airfi Home",
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --inline --open --port 3010",

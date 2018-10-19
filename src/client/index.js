@@ -7,7 +7,7 @@ import { render } from 'react-dom';
 import { Provider } from 'mobx-react';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from '../common/components/router/Routes';
-import AppState from '../common/stores/appstate';
+import AppState from '../common/stores/Appstate';
 
 declare var window: {
     __INITIAL_STATE__: Object,
