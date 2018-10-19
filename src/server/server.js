@@ -8,10 +8,9 @@ import { Provider } from 'mobx-react';
 import { StaticRouter } from 'react-router-dom';
 import Routes from '../common/components/router/Routes';
 import RootStore from '../common/stores/RootStore';
-const PORT = process.env.PORT || 3011;
 
 /**
- * SSR (server side rendering) only FOR PRODUCTION
+ * SSR (server side rendering)
  * 
  * This is an isomorphic app, thus, an app that renders both on the client and the server
  * Three main reasons for SSR:
@@ -70,4 +69,4 @@ createServer((req, res) => {
     res.end();
   }
 
-}).listen(PORT);
+}).listen(process.env.PORT || 3011);

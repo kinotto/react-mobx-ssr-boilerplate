@@ -64,10 +64,21 @@ const definePlugin = new webpack.DefinePlugin({
 });
 
 
-if(isProduction) {
-  baseConfig[0].plugins = [definePlugin];
-} else {
-  baseConfig.push(cssHotLoader);
-}
+module.exports = env => {
+  if (isProduction) {
+    baseConfig[0].plugins = [definePlugin];
+  } 
+  else {
+    baseConfig[0].devServer = {
+      port: env.PORT,
+      proxy: {
+        //forward all routes to local express server keeping hot-reload and live-compiling
+        "/**": `http://localhost:${env.TO}`
+      }
+    }
 
-module.exports = baseConfig;
+    baseConfig.push(cssHotLoader);
+  }
+
+  return baseConfig;
+}

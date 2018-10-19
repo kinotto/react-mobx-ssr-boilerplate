@@ -15,9 +15,10 @@ Isomorphic application that benefit of SSR (server side rendering), already set 
 - reactive approach to update component state (using ES2016 decorators e.g. @observable, @observer)
 - flow (static type checking at compile time)
 - React Router 4
-- webpack
+- webpack (livecompiling and hot reload)
 - unit testing with Jest
-
+- sass loader
+- custom VScode config for debugging 
 
 # Coding convention
 - every Class must start with a capital letter.
