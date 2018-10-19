@@ -7,7 +7,7 @@ import { renderToString } from 'react-dom/server';
 import { Provider } from 'mobx-react';
 import { StaticRouter } from 'react-router-dom';
 import Routes from '../common/components/router/Routes';
-import AppState from '../common/stores/appstate';
+import RootStore from '../common/stores/RootStore';
 const PORT = process.env.PORT || 3011;
 
 /**
@@ -19,11 +19,11 @@ const PORT = process.env.PORT || 3011;
  * - Better performance
  * - Better maintainability
 */
-const renderView = (req, appstate) => {
+const renderView = (req, rootStore) => {
 
   const context = {};
   const componentHTML = renderToString(
-    <Provider appstate={appstate}>
+    <Provider rootStore={rootStore}>
       <StaticRouter location={req.url} context={context}>
         <Routes />
       </StaticRouter>
@@ -38,7 +38,7 @@ const renderView = (req, appstate) => {
                 <title>AirFi recruitment app</title>
                 <link href="index.css" rel="stylesheet" type="text/css" />
                 <script>
-                    window.__INITIAL_STATE__ = ${ JSON.stringify({ appstate: appstate.toJson() })};
+                    window.__INITIAL_STATE__ = ${ JSON.stringify({ todoStore: rootStore.todoStore.toJson() })};
                 </script>
             </head>
             <body>
@@ -63,10 +63,10 @@ createServer((req, res) => {
   }
   else {
     
-    const appstate = new AppState();
-    appstate.addItem('foo');
-    appstate.addItem('bar');
-    res.write(renderView(req, appstate));
+    const rootStore = new RootStore();
+    rootStore.todoStore.addItem('foo');
+    rootStore.todoStore.addItem('bar');
+    res.write(renderView(req, rootStore));
     res.end();
   }
 

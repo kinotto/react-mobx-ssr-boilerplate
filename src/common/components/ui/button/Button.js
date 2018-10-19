@@ -1,36 +1,36 @@
 /* @flow */
 import * as React from 'react';
 import { observer, inject } from "mobx-react";
-import AppState from '../../../stores/Appstate';
+import RootStore from '../../../stores/RootStore';
 declare var window: ?Object;
 
 type Props = {
-  appstate: AppState<string>
+  rootStore: RootStore
 };
 
-@inject('appstate')
+@inject('rootStore')
 @observer
 class Button extends React.Component<Props> {
 
   static defaultProps = {
-    appstate: new AppState()
+    todoStore: new RootStore()
   };
 
   constructor(props: Props) {
     super(props);
   }
 
-  addItem = () => this.props.appstate.addItem('foobar');
+  addItem = () => this.props.rootStore.todoStore.addItem('foobar');
 
   render() {
 
-    const { appstate } = this.props;
+    const { todoStore } = this.props.rootStore;
 
     return (
       <div>
         <button onClick={this.addItem} className="button__test">foobar</button>
         <ul>
-          {appstate.items.map((item, key) => <li key={key}>{item}</li>)}
+          {todoStore.items.map((item, key) => <li key={key}>{item}</li>)}
         </ul>
       </div>
     );

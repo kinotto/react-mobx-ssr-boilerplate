@@ -7,7 +7,7 @@ import { render } from 'react-dom';
 import { Provider } from 'mobx-react';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from '../common/components/router/Routes';
-import AppState from '../common/stores/Appstate';
+import RootStore from '../common/stores/RootStore';
 
 declare var window: {
     __INITIAL_STATE__: Object,
@@ -16,12 +16,12 @@ declare var window: {
     }
 };
 
-const appstate = new AppState(window.__INITIAL_STATE__);
+const rootStore = new RootStore(window.__INITIAL_STATE__);
 const element = document.getElementById('root');
 
 if(element)
     render(
-        <Provider appstate={ appstate }>
+        <Provider rootStore={ rootStore }>
           <BrowserRouter>
             <Routes />
           </BrowserRouter>
