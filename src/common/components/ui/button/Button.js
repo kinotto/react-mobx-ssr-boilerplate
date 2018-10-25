@@ -28,7 +28,7 @@ class Button extends React.Component<Props> {
 
     return (
       <div>
-        <button onClick={this.addItem} className="button__test">foobarasdssadss</button>
+        <button onClick={this.addItem} className="button__test">foobar</button>
         <ul>
           {todoStore.items.map((item, key) => <li key={key}>{item}</li>)}
         </ul>

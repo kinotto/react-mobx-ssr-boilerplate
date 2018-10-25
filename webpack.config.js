@@ -72,7 +72,7 @@ module.exports = env => {
     baseConfig[0].devServer = {
       port: env.PORT,
       proxy: {
-        //forward all routes to local express server keeping hot-reload and live-compiling
+        //forward all routes to local express server and still keep hot-reload and live-compiling from webpack
         "/**": `http://localhost:${env.TO}`
       }
     }
