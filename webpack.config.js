@@ -4,14 +4,11 @@ const path = require('path');
 const ExtractTextWebpackPlugin = require("extract-text-webpack-plugin");
 const isProduction = process.env.NODE_ENV === "production";
 
-let baseConfig = [
-  {
+module.exports = (env = {}) => {
+  const baseConfig = {
     //external source maps in prod to reduce bundle size but still allow debugging!
     devtool: isProduction ? 'source-map' : 'eval-source-map',
-    context: path.resolve(__dirname, './src/client'),
-    entry: {
-      app: './index.js'
-    },
+    entry: './src/client/index.js',
     output: {
       path: path.resolve(__dirname, './dist'),
       filename: 'bundle.js',
@@ -22,63 +19,48 @@ let baseConfig = [
         {
           test: /\.js$/,
           loader: 'babel-loader'
+        },
+        {
+          test: /\.scss$/, // files ending with .scss
+          use: ['css-hot-loader'].concat(ExtractTextWebpackPlugin.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'sass-loader'],
+          }))
         }
-      ],
+      ]
+    },
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new ExtractTextWebpackPlugin({
+        allChunks: true,
+        filename: "index.css"
+      }),
+    ],
+    resolve: {
+      extensions: ['.js', '.jsx']
     }
   }
-];
 
-
-const cssHotLoader = {
-  entry: path.resolve(__dirname, './src/common/style/index.scss'),
-  output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: "index.css"
-  },
-  resolve: {
-    modules: ["node_modules"]
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.scss$/, // files ending with .scss
-        use: ['css-hot-loader'].concat(ExtractTextWebpackPlugin.extract({
-          fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader'],
-        })),
-      },
-    ]
-  },
-  plugins: [
-    new ExtractTextWebpackPlugin('index.css', {
-      allChunks: true,
-    }),
-  ]
-}
-
-
-const definePlugin = new webpack.DefinePlugin({
-  'process.env': {
-    'NODE_ENV': JSON.stringify('production')
-  }
-});
-
-
-module.exports = env => {
-  if (isProduction) {
-    baseConfig[0].plugins = [definePlugin];
-  } 
-  else {
-    baseConfig[0].devServer = {
+  if(!isProduction) {
+    baseConfig.devServer = {
+      inline: true,
+      compress: true,
       port: env.PORT,
+      hot: true,
       proxy: {
-        //forward all routes to local express server and still keep hot-reload and live-compiling from webpack
-        "/**": `http://localhost:${env.TO}`
+        //forward all routes to local express server and still keep hot-module-replacement from webpack
+        "/**": {
+          target: `http://localhost:${env.TO}`,
+          /*bypass: (req, res) => {
+            if (req.url.indexOf("index.css") !== -1) {
+              console.log("requested index.css");
+              return "index.css";
+            }
+          }*/
+        }
       }
     }
-
-    baseConfig.push(cssHotLoader);
   }
 
   return baseConfig;
-}
+};

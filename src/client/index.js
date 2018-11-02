@@ -8,6 +8,8 @@ import { Provider } from 'mobx-react';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from '../common/components/router/Routes';
 import RootStore from '../common/stores/RootStore';
+import '../common/style/index.scss';
+
 
 declare var window: {
     __INITIAL_STATE__: Object,

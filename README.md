@@ -12,6 +12,10 @@ Isomorphic application that benefit of SSR (server side rendering), already set 
 - sass loader
 - custom VScode config for debugging 
 
+# Dev and Prod
+- the starter comes with two webpack configurations for devevelopment and production environments.
+- To speed up the dev environment the app comes with Hot module replacement enabled and already configured with sass Hot reload and React hot loader.
+
 # Coding convention
 - every Class must start with a capital letter.
 - unit tests should be placed in the same folder of the component and should following this naming "componentName.test.js" in order to be run automatically by Jest
