@@ -2,18 +2,22 @@
 import { observable, action } from 'mobx';
 import RootStore from '../RootStore';
 
-export default class TodoStore<Item> {
+type InitialState = {
+  items: Array<string>
+}
 
-  @observable items: Array<Item> = [];
+export default class TodoStore {
+
+  @observable items: Array<string> = [];
   rootStore: RootStore;
 
-  constructor(rootStore: RootStore, initialState?: TodoStore<Item>) {
+  constructor(rootStore: RootStore, initialState?: InitialState) {
     this.rootStore = rootStore;
-    this.items = initialState && initialState.items ? initialState.items : [];
+    this.items = (initialState && initialState.items) ? initialState.items : [];
   }
 
   @action
-  addItem(item: Item) {
+  addItem(item: string) {
     this.items.push(item);
   }
 

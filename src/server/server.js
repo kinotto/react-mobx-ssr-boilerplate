@@ -31,22 +31,22 @@ const renderView = (req, rootStore) => {
   );
 
   const HTML = `
-      <!DOCTYPE html>
-      <html>
-        <head>
-          <meta charset="utf-8">
-          <title>AirFi recruitment app</title>
-          <link href="index.css" rel="stylesheet" type="text/css" />
-          <script>
-            window.__INITIAL_STATE__ = ${ JSON.stringify({ todoStore: rootStore.todoStore.toJson() })};
-          </script>
-        </head>
-        <body>
-          <div id="root">${componentHTML}</div>
-          <script type="application/javascript" src="/bundle.js"></script>
-        </body>
-      </html>
-    `;
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <title>AirFi recruitment app</title>
+        <link href="index.css" rel="stylesheet" type="text/css" />
+        <script>
+          window.__INITIAL_STATE__ = ${ JSON.stringify({ todoStore: rootStore.todoStore.toJson() })};
+        </script>
+      </head>
+      <body>
+        <div id="root">${componentHTML}</div>
+        <script type="application/javascript" src="/bundle.js"></script>
+      </body>
+    </html>
+  `;
 
   return HTML;
 };

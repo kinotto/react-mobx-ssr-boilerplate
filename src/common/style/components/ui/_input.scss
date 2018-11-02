@@ -3,12 +3,12 @@
   min-width: 400px;
   border: solid 1px rgba(36, 47, 54, 0.15);
   background-color: rgba(36, 47, 54, 0.06);
-  font-size: 30px;
+  font-size: $font-size-large;
   color: rgb(80, 73, 73);
   opacity: .6;
   padding: $spacing-small $spacing-default;
   font-style: italic;
-  
+
   &:focus {
     outline: none;
   }
