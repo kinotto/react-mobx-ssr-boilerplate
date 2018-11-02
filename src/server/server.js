@@ -35,7 +35,7 @@ const renderView = (req, rootStore) => {
     <html>
       <head>
         <meta charset="utf-8">
-        <title>AirFi recruitment app</title>
+        <title>ReactMobxSSR starter</title>
         <link href="index.css" rel="stylesheet" type="text/css" />
         <script>
           window.__INITIAL_STATE__ = ${ JSON.stringify({ todoStore: rootStore.todoStore.toJson() })};

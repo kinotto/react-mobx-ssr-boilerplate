@@ -11,13 +11,11 @@ class RootStore {
 
   todoStore: TodoStore;
 
-  defaultState: InitialState = { 
+  constructor(initialState: InitialState = { 
     todoStore: {
       items: []
     }
-  }
-
-  constructor(initialState: InitialState = this.defaultState) {
+  }) {
     this.todoStore = new TodoStore(this, initialState.todoStore);
     /*
     other stores

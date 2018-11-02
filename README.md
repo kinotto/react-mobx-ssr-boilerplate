@@ -1,7 +1,8 @@
-# AirFi recruitment app
+# ReactMobxSSR starter
 
 # Description
-Isomorphic application that benefit of SSR (server side rendering), already set up with:
+
+Minimalistic Isomorphic TODO list application that benefit of SSR (server side rendering), already set up with:
 - React 16 + React Router 4
 - MobX 5.5 (state management library) https://github.com/mobxjs/mobx
 - Node + Express
@@ -14,7 +15,7 @@ Isomorphic application that benefit of SSR (server side rendering), already set 
 
 # Dev and Prod
 - the starter comes with two webpack configurations for devevelopment and production environments.
-- To speed up the dev environment the app comes with Hot module replacement enabled and already configured with sass Hot reload and React hot loader.
+- To speed up the dev environment the app comes with HMR enabled and already configured with sass Hot reload and React hot loader.
 
 # Coding convention
 - every Class must start with a capital letter.
