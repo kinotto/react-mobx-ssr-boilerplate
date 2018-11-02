@@ -30,4 +30,3 @@ class Routes extends Component<Props> {
 
 //ADD hot reloading for dev
 export default hot(module)(Routes);
-//export default Routes;

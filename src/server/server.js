@@ -1,5 +1,4 @@
 /* @flow */
-import { createServer } from 'http';
 import fs from 'fs';
 import path from 'path';
 import React from 'react';
@@ -8,6 +7,8 @@ import { Provider } from 'mobx-react';
 import { StaticRouter } from 'react-router-dom';
 import Routes from '../common/components/router/Routes';
 import RootStore from '../common/stores/RootStore';
+const express = require('express');
+const app = express();
 
 /**
  * SSR (server side rendering)
@@ -50,23 +51,22 @@ const renderView = (req, rootStore) => {
   return HTML;
 };
 
-createServer((req, res) => {
+app.get('/', (req, res) => {
+  const rootStore = new RootStore();
+  rootStore.todoStore.addItem('foo');
+  rootStore.todoStore.addItem('bar');
+  res.write(renderView(req, rootStore));
+  res.end();
+})
 
-  if (req.url === '/bundle.js' || req.url === '/bundle.js.map') {
-    res.writeHead(200, { 'Content-Type': 'text/javascript' });
-    fs.createReadStream(path.resolve(__dirname, `../../dist${req.url}`)).pipe(res);
-  }
-  else if (req.url === '/index.css') {
-    res.writeHead(200, { 'Content-Type': 'text/css' });
-    fs.createReadStream(path.resolve(__dirname, '../../dist/index.css')).pipe(res);
-  }
-  else {
+app.get(['/bundle.js', '/bundle.js.map'], (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/javascript' });
+  fs.createReadStream(path.resolve(__dirname, `../../dist${req.url}`)).pipe(res);
+})
 
-    const rootStore = new RootStore();
-    rootStore.todoStore.addItem('foo');
-    rootStore.todoStore.addItem('bar');
-    res.write(renderView(req, rootStore));
-    res.end();
-  }
+app.get('/index.css', (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/css' });
+  fs.createReadStream(path.resolve(__dirname, '../../dist/index.css')).pipe(res);
+})
 
-}).listen(process.env.PORT || 3011);
+app.listen(process.env.PORT || 3011, console.log.bind(this, `server listeneing on port ${process.env.PORT || 3011}`));
