@@ -19,7 +19,7 @@ class Home extends Component<Props> {
       <div className="home">
         <div className="home__title">Todo List</div>
         <Input 
-          placeholder="Enter the todo and press enter"
+          placeholder="Add the todo and press enter"
           onKeyPress={evt => evt.key === "Enter" && this.addTodo(evt.target.value)}
         />
 
