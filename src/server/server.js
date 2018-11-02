@@ -33,18 +33,18 @@ const renderView = (req, rootStore) => {
   const HTML = `
       <!DOCTYPE html>
       <html>
-          <head>
-              <meta charset="utf-8">
-              <title>AirFi recruitment app</title>
-              <link href="index.css" rel="stylesheet" type="text/css" />
-              <script>
-                  window.__INITIAL_STATE__ = ${ JSON.stringify({ todoStore: rootStore.todoStore.toJson() })};
-              </script>
-          </head>
-          <body>
-              <div id="root">${componentHTML}</div>
-              <script type="application/javascript" src="/bundle.js"></script>
-          </body>
+        <head>
+          <meta charset="utf-8">
+          <title>AirFi recruitment app</title>
+          <link href="index.css" rel="stylesheet" type="text/css" />
+          <script>
+            window.__INITIAL_STATE__ = ${ JSON.stringify({ todoStore: rootStore.todoStore.toJson() })};
+          </script>
+        </head>
+        <body>
+          <div id="root">${componentHTML}</div>
+          <script type="application/javascript" src="/bundle.js"></script>
+        </body>
       </html>
     `;
 
@@ -53,8 +53,8 @@ const renderView = (req, rootStore) => {
 
 app.get('/', (req, res) => {
   const rootStore = new RootStore();
-  rootStore.todoStore.addItem('foo');
-  rootStore.todoStore.addItem('bar');
+  rootStore.todoStore.addItem('Todo1 (server)');
+  rootStore.todoStore.addItem('Todo2 (server)');
   res.write(renderView(req, rootStore));
   res.end();
 })

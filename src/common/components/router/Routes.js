@@ -1,9 +1,10 @@
 /* @flow */
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Button from '../ui/button/Button';
 import NotFound from '../ui/not-found/NotFound';
 import { hot } from 'react-hot-loader';
+import Home from '../containers/Home';
+
 declare var window: ?Object;
 
 type Props = {};
@@ -18,7 +19,7 @@ class Routes extends Component<Props> {
   render() {
     return (
       <Switch>
-        <Route exact path='/' component={Button} />
+        <Route exact path='/' component={Home} />
 
         {/* other routes */}
 
