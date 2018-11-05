@@ -11,7 +11,7 @@ class RootStore {
 
   todoStore: TodoStore;
 
-  constructor(initialState: InitialState = { 
+  constructor(initialState: InitialState = {
     todoStore: {
       items: []
     }

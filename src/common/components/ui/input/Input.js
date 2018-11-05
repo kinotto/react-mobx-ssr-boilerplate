@@ -1,11 +1,11 @@
 /* @flow */
 import React from 'react';
 
-type Props = {};
+type Props = { className?: string };
 const Input = (props: Props) => (
   <input 
     {...props}
-    className="input"
+    className={`input ${props.className || ""}`}
   />
 )
 

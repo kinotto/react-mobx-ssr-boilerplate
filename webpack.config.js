@@ -18,10 +18,12 @@ module.exports = (env = {}) => {
       rules: [
         {
           test: /\.js$/,
-          loader: 'babel-loader'
+          use: {
+            loader: 'babel-loader'
+          }
         },
         {
-          test: /\.scss$/, // files ending with .scss
+          test: /\.scss$/,
           use: ['css-hot-loader'].concat(ExtractTextWebpackPlugin.extract({
             fallback: 'style-loader',
             use: ['css-loader', 'sass-loader'],
@@ -30,7 +32,6 @@ module.exports = (env = {}) => {
       ]
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin(),
       new ExtractTextWebpackPlugin({
         allChunks: true,
         filename: "index.css"
@@ -41,7 +42,7 @@ module.exports = (env = {}) => {
     }
   }
 
-  if(!isProduction) {
+  if (!isProduction) {
     baseConfig.devServer = {
       inline: true,
       compress: true,
@@ -50,16 +51,11 @@ module.exports = (env = {}) => {
       proxy: {
         //forward all routes to local express server and still keep hot-module-replacement from webpack
         "/**": {
-          target: `http://localhost:${env.TO}`,
-          /*bypass: (req, res) => {
-            if (req.url.indexOf("index.css") !== -1) {
-              console.log("requested index.css");
-              return "index.css";
-            }
-          }*/
+          target: `http://localhost:${env.TO}`
         }
       }
     }
+    baseConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
   }
 
   return baseConfig;

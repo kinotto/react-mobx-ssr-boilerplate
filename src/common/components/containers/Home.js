@@ -1,6 +1,7 @@
 /* @flow */
 import React, { Component } from 'react';
 import { observer, inject } from "mobx-react";
+import { observable } from 'mobx';
 import Input from '../ui/input/Input';
 import RootStore from '../../stores/RootStore';
 
@@ -12,7 +13,12 @@ type Props = {
 @observer
 class Home extends Component<Props> {
 
-  addTodo = (item: string) => this.props.rootStore.todoStore.addItem(item);
+  @observable value = "";
+
+  addTodo = (item: string) => {
+    this.props.rootStore.todoStore.addItem(item)
+    this.value = "";
+  }
 
   render() {
     return (
@@ -20,6 +26,8 @@ class Home extends Component<Props> {
         <div className="home__title">Todo List</div>
         <Input 
           placeholder="Add the todo and press enter"
+          value={this.value}
+          onChange={evt => this.value = evt.target.value}
           onKeyPress={evt => evt.key === "Enter" && this.addTodo(evt.target.value)}
         />
 
