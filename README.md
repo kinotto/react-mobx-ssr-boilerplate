@@ -70,3 +70,7 @@ you can debug both the client and the server, there's already a custom vscode la
 - Server
 
 <img src="https://i.imgur.com/Bm39QxR.gif" />
+
+
+## License
+MIT 2018 License <a href="https://github.com/kinotto">Karim Abdelcadir</a>
