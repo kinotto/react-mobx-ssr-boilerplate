@@ -35,7 +35,7 @@ npm run start or npm run start:prod
 ```
 
 ## Dev and Prod
-The starter comes with two webpack configurations for devevelopment and production environments.
+The starter comes with two webpack configurations for development and production environments.
 To speed up the dev environment it comes with HMR enabled and already configured with Sass Hot reload and React hot loader.
 
 
