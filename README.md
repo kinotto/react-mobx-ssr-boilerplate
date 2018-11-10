@@ -9,9 +9,10 @@ Minimalistic Isomorphic TODO list application already set up with:
 - Server side rendering with NodeJS + Express
 - reactive approach to update component state (using ES2016 decorators e.g. @observable, @observer)
 - Flow (static type checking at compile time)
-- Webpack with a configurations for both dev and prod environments
-- Unit testing with Jest
 - Sass compilation
+- Webpack with a configurations for both dev and prod environments
+- HMR + React HOT reload + Sass hot reload
+- Unit testing with Jest
 - Custom VScode config for debugging
 
 This app doesn't add any unuseful complexity, just a simple TODO list implemented following the best practice with some useful npm tasks to build and run your app
