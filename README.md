@@ -1,5 +1,5 @@
 # React + Mobx + SSR starter
-<img src="https://i.imgur.com/U2PtkaX.gif" />
+<img src="https://i.imgur.com/OCnmHXV.gif" />
 
 ### Description
 
