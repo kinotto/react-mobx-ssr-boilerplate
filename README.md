@@ -1,7 +1,7 @@
 # React + Mobx + SSR starter
 <img src="https://i.imgur.com/qaenr60.gif" />
 
-### Description
+## Description
 
 Minimalistic Isomorphic TODO list application already set up with:
 - React 16 + React Router 4
@@ -33,15 +33,15 @@ npm run build or npm run build:prod
 npm run start or npm run start:prod
 ```
 
-### Dev and Prod
+## Dev and Prod
 The starter comes with two webpack configurations for devevelopment and production environments.
 To speed up the dev environment the app comes with HMR enabled and already configured with Sass Hot reload and React hot loader.
 
 
-### Flow
+## Flow
 The project relies on <a href="https://github.com/flowtype/flow-bin#readme">Flow</a> being installed globally, if you're experiencing any syntax errors just make sure you have flow installed (and if you're using VsCode add even the proper <a href="https://github.com/flowtype/flow-for-vscode">flow extension</a>).
 
-### Basic folder structure
+## Basic folder structure
 
 - <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> Stores
    * <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> Domain:
@@ -59,7 +59,7 @@ The project relies on <a href="https://github.com/flowtype/flow-bin#readme">Flow
 - <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> Style: any scss must be placed in the style folder and must have the prefix _ if is a partial file
 
 
-### Debug
+## Debug
 you can debug both the client and the server, there's already a custom vscode launch.json configuration, so you just need to run the debugger and you should be ready to go
 
 - Client
