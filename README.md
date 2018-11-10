@@ -44,7 +44,7 @@ The project relies on <a href="https://github.com/flowtype/flow-bin#readme">Flow
 
 ## Basic folder structure
 
-- <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> Stores
+- <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> <a href="https://mobx.js.org/best/store.html">Stores</a>
    * <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> Domain:
        stores the data which'll be needed in your app. (user data, for example todos array)
    * <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> View/UI:
