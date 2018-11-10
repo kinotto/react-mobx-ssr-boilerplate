@@ -3,10 +3,10 @@
 
 ### Description
 
-Minimalistic Isomorphic TODO list application that benefit of SSR (server side rendering), already set up with:
+Minimalistic Isomorphic TODO list application already set up with:
 - React 16 + React Router 4
 - MobX 5.5 (state management library)
-- Node + Express
+- Server side rendering with NodeJS + Express
 - reactive approach to update component state (using ES2016 decorators e.g. @observable, @observer)
 - Flow (static type checking at compile time)
 - Webpack with a configurations for both dev and prod environments
@@ -14,7 +14,7 @@ Minimalistic Isomorphic TODO list application that benefit of SSR (server side r
 - Sass compilation
 - Custom VScode config for debugging
 
-This app doesn't add any unuseful complexity, just a simple TODO list implemented following the best practice with some useful npm tasks for build and run your app
+This app doesn't add any unuseful complexity, just a simple TODO list implemented following the best practice with some useful npm tasks to build and run your app
 
 ### Build and run
 
