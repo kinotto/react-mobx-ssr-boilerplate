@@ -19,7 +19,7 @@ class Home extends Component<Props> {
     this.props.rootStore.todoStore.addItem(item)
     this.value = "";
   }
-
+  
   render() {
     return (
       <div className="home">

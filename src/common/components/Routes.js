@@ -1,9 +1,9 @@
 /* @flow */
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import NotFound from '../ui/not-found/NotFound';
 import { hot } from 'react-hot-loader';
-import Home from '../containers/Home';
+import Home from './containers/Home';
+import NotFound from './ui/not-found/NotFound';
 
 declare var window: ?Object;
 
@@ -15,7 +15,7 @@ class Routes extends Component<Props> {
     super(props);
     console.log(typeof window === 'object' ? 'Rendering client-side' : 'Rendering server-side');
   }
-
+  
   render() {
     return (
       <Switch>

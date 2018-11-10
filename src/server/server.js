@@ -5,7 +5,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { Provider } from 'mobx-react';
 import { StaticRouter } from 'react-router-dom';
-import Routes from '../common/components/router/Routes';
+import Routes from '../common/components/Routes';
 import RootStore from '../common/stores/RootStore';
 const express = require('express');
 const app = express();
