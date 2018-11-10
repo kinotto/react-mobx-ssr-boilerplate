@@ -55,7 +55,7 @@ The project relies on <a href="https://github.com/flowtype/flow-bin#readme">Flow
 
 - <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> Services: Here you can make services like api calls, that will be used directly by the stores
 
-- <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> Components: Container or Smart Component, Dumb or presentational component
+- <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> Components: Container or Smart Components, Dumb or presentational components
 
 - <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> Style: any scss must be placed in the style folder and must have the prefix _ if is a partial file
 
