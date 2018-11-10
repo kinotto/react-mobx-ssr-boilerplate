@@ -1,5 +1,5 @@
 # React + Mobx + SSR starter
-<img src="https://i.imgur.com/U2PtkaX.gif" />
+<img src="https://i.imgur.com/qaenr60.gif" />
 
 ### Description
 
@@ -18,24 +18,24 @@ This app doesn't add any unuseful complexity, just a simple TODO list implemente
 
 ### Build and run
 
-Install:
+
 ```
 yarn install or npm install 
 ```
 
-Build:
+
 ```
 npm run build or npm run build:prod
 ```
 
-Run:
+
 ```
 npm run start or npm run start:prod
 ```
 
 ### Dev and Prod
-- The starter comes with two webpack configurations for devevelopment and production environments.
-- To speed up the dev environment the app comes with HMR enabled and already configured with Sass Hot reload and React hot loader.
+The starter comes with two webpack configurations for devevelopment and production environments.
+To speed up the dev environment the app comes with HMR enabled and already configured with Sass Hot reload and React hot loader.
 
 
 ### Flow
