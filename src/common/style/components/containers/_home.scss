@@ -2,13 +2,13 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: lighten($color: grey, $amount: 46%);
+  background: url("https://www.toptal.com/designers/subtlepatterns/patterns/playstation-pattern.png");
   width: calc(100% + 16px);
   height: 100vh;
   margin: -8px;
 
   &__title {
-    font-size: 40px;
+    font-size: 50px;
     margin: $spacing-small 0 $spacing-default 0;
   }
 
