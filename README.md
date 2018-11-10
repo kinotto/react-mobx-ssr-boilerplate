@@ -40,11 +40,11 @@ To speed up the dev environment it comes with HMR enabled and already configured
 
 
 ## Flow
-The project relies on <a href="https://github.com/flowtype/flow-bin#readme" target="_blank">Flow</a> being installed globally, if you're experiencing any syntax errors just make sure you have flow installed (and if you're using VsCode add even the proper <a href="https://github.com/flowtype/flow-for-vscode" target="_blank">flow extension</a>).
+The project relies on <a href="https://github.com/flowtype/flow-bin#readme">Flow</a> being installed globally, if you're experiencing any syntax errors just make sure you have flow installed (and if you're using VsCode add even the proper <a href="https://github.com/flowtype/flow-for-vscode">flow extension</a>).
 
 ## Basic folder structure
 
-- <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> <a href="https://mobx.js.org/best/store.html" target="_blank">Stores</a>
+- <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> <a href="https://mobx.js.org/best/store.html">Stores</a>
    * <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> Domain:
        stores the data which'll be needed in your app. (user data, for example todos array)
    * <img src="http://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Folder-icon.png" width="15" /> View/UI:
